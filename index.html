@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cuerpo Humano</title>
+  <script>
+    // Esta función se ejecutará cuando todos los frames estén cargados
+    function pedirNombre() {
+      let nombre = prompt("Por favor, ingresa tu nombre:");
+      if (nombre && nombre.trim() !== "") {
+        // Escribimos en el frame del título (A)
+        let frameTitulo = window.frames["titulo"];
+        if (frameTitulo && frameTitulo.document) {
+          frameTitulo.document.body.innerHTML = `
+            <h1 style="color:#333; font-family:Arial;">Cuerpo Humano</h1>
+            <h2 style="color:#555;">Bienvenido(a) ${nombre}</h2>
+          `;
+          frameTitulo.document.body.style.backgroundColor = "#E8DAEF"; 
+          frameTitulo.document.body.style.textAlign = "center";
+        }
+      } 
+    }
+  </script>
+</head>
+
+<!-- Cuando cargue el frameset, pedimos el nombre -->
+<frameset rows="15%,85%" onload="pedirNombre()">
+  
+  <!-- A: título -->
+  <frame src="titulo2.html" name="titulo" noresize scrolling="no">
+
+  <!-- Parte inferior: B (imagen) y C-D (derecha) -->
+  <frameset cols="70%,30%">
+    
+    <!-- B: imagen del cuerpo humano -->
+    <frame src="imagen3.html" name="imagen" noresize scrolling="no">
+
+    <!-- C y D (a la derecha) -->
+    <frameset rows="30%,70%">
+      <!-- C: nombre de la parte seleccionada -->
+      <frame src="parte4.html" name="parte4" noresize scrolling="no">
+      <!-- D: información de la parte -->
+      <frame src="info5.html" name="info" scrolling="yes">
+    </frameset>
+
+  </frameset>
+</frameset>
+</html>

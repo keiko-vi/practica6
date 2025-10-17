@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagen del Cuerpo</title>
+</head>
+<body style="text-align:center;">
+  <h3>Selecciona una parte del cuerpo:</h3>
+
+  <img src="cuerpo.png" usemap="#cuerpo" alt="Cuerpo Humano" width="500">
+
+  <map name="cuerpo">
+    <!-- Cerebro -->
+    <area shape="circle" coords="170,100,90" 
+      href="#" 
+      onclick="parent.frames['parte4'].document.body.innerHTML='<h2>Cerebro 🧠</h2>'; parent.frames['info'].location='https://es.wikipedia.org/wiki/Cerebro'; return false;"
+      alt="Cerebro">
+
+    <!-- Corazón -->
+    <area shape="circle" coords="150,120,30" 
+      href="#"
+      onclick="parent.frames['parte4'].document.body.innerHTML='<h2>Corazón 🫀</h2>'; parent.frames['info'].location='https://es.wikipedia.org/wiki/Coraz%C3%B3n'; return false;"
+      alt="Corazón">
+
+    <!-- Pulmones -->
+    <area shape="circle" coords="150,200,30" 
+      href="#"
+      onclick="parent.frames['parte4'].document.body.innerHTML='<h2>Pulmones 🫁</h2>'; parent.frames['info'].location='https://es.wikipedia.org/wiki/Pulm%C3%B3n'; return false;"
+      alt=" Pulmones">
+  </map>
+</body>
+</html>
